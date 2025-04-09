@@ -42,7 +42,7 @@ const CampsiteInfoScreen = ({ route }) => {
         <Rating
           readonly
           startingValue={item.rating}
-          imageSize="10"
+          imageSize={10}
           style={{ alignItems: "flex-start", paddingVertical: "5%" }}
         />
         <Text
@@ -68,7 +68,7 @@ const CampsiteInfoScreen = ({ route }) => {
               markFavorite={() => dispatch(toggleFavorite(campsite.id))}
               onShowModal={() => setShowModal(!showModal)}
             />
-            <Text styles={styles.commentsTitle}>Comments</Text>
+            <Text style={styles.commentsTitle}>Comments</Text>
           </>
         }
       />
@@ -80,9 +80,9 @@ const CampsiteInfoScreen = ({ route }) => {
       >
         <View style={styles.modal}>
           <Rating
-            showRating={rating}
-            initialRating="5"
-            imageSize="40"
+            showRating
+            startingValue="5"
+            imageSize={40}
             style={{ paddingVertical: 10 }}
             onFinishRating={(rating) => setRating(rating)}
           />
@@ -108,7 +108,7 @@ const CampsiteInfoScreen = ({ route }) => {
                 handleSubmit();
                 resetForm();
               }}
-            ></Button>
+            />
           </View>
           <View style={{ margin: 10 }}>
             <Button
@@ -118,7 +118,7 @@ const CampsiteInfoScreen = ({ route }) => {
               }}
               color="#808080"
               title="Cancel"
-            ></Button>
+            />
           </View>
         </View>
       </Modal>
